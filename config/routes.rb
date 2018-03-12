@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   
   devise_scope :users do
     resources :users, only: [:show]
+    get '/users/security', to: 'users#security'
   end
 
  
