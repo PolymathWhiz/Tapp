@@ -1,7 +1,8 @@
 <div class="sidebar">
   <div class="logo">
     <a href="<%= user_path() %>" class="simple-text text-white">
-      <%= employer_name(current_user) %>
+      <%= current_user.fn %>
+        <%= current_user.lname %>
     </a>
   </div>
 
@@ -16,39 +17,43 @@
       <li>
         <a href="<%= edit_user_registration_path %>">
           <i class="material-icons">person</i>
-          <p>View Company Profile</p>
+          <p>View Your Profile</p>
         </a>
       </li>
-      <li>
-        <a href="<%#= new_post_path %>">
-          <i class="material-icons">content_paste</i>
-          <p>Post an Opening</p>
-        </a>
-      </li>
-      <li>
-        <a href="<%#= posts_path %>">
-          <i class="material-icons">library_books</i>
-          <p>Manage Openings</p>
-        </a>
-      </li>
-      <li>
-        <a href="">
-          <i class="material-icons">inbox</i>
-          <p>Manage Applications</p>
-        </a>
-      </li>
-      <!-- <li>
-        <a href="<%#= employer_security_path %>">
-          <i class="material-icons text-gray">security</i>
-          <p>Security</p>
-        </a>
-      </li> -->
-      <li class="active-pro">
-        <a href="<%= destroy_user_session_path %>" data-method="delete" rel="nofollow">
-          <i class="material-icons">unarchive</i>
-          <p>Sign out</p>
-        </a>
-      </li>
+
+      <% if current_user.admin? %>
+        <li>
+          <a href="<%= root_path %>">
+            <i class="material-icons">content_paste</i>
+            <p>Add Lessons</p>
+          </a>
+        </li>
+        <% end %>
+
+          <li>
+            <a href="<%= root_path %>">
+              <i class="material-icons">content_paste</i>
+              <p>View Lessons</p>
+            </a>
+          </li>
+          <li>
+            <a href="<%= root_path %>">
+              <i class="material-icons">library_books</i>
+              <p>Take Tests</p>
+            </a>
+          </li>
+          <li>
+            <a href="<%= root_path %>">
+              <i class="material-icons text-gray">security</i>
+              <p>Security</p>
+            </a>
+          </li>
+          <li class="active-pro">
+            <a href="<%= destroy_user_session_path %>" data-method="delete" rel="nofollow">
+              <i class="material-icons">unarchive</i>
+              <p>Sign out</p>
+            </a>
+          </li>
     </ul>
   </div>
 </div>
