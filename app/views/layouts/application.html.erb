@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
+
   <head>
-    <title>Tapp</title>
+    <meta charset="utf-8" />
+    <!-- Include favicon-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Tari App</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+      <meta name="viewport" content="width=device-width" />
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+          <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
+
+          <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
   </head>
 
   <body>
     <%= yield %>
   </body>
+
 </html>
