@@ -1,6 +1,6 @@
 <div class="sidebar">
   <div class="logo">
-    <a href="<%= user_path() %>" class="simple-text text-white">
+    <a href="<%= user_path(current_user) %>" class="simple-text text-white">
       <%= current_user.fn %>
         <%= current_user.lname %>
     </a>
@@ -31,7 +31,7 @@
         <% end %>
 
           <li>
-            <a href="<%= root_path %>">
+            <a href="<%= lessons_path %>">
               <i class="material-icons">content_paste</i>
               <p>View Lessons</p>
             </a>

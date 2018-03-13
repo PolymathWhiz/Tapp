@@ -2,7 +2,7 @@ class LessonsController < ApplicationController
   before_action :set_lession, only: [:update, :destroy]
   
   def index
-   @lessons = Lessons.all 
+   @lessons = Lesson.all 
   end
 
   def create
