@@ -1,0 +1,50 @@
+<div class="wrapper">
+
+  <%= render 'shared/sidebar' %>
+
+  <div class="main-panel">
+    <%= render  "shared/employer_nav" %>
+
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+
+          <%= render "shared/alert" %>
+
+          <div class="content">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                  <div class="card">
+                    <div class="card-header">
+                      <h4 class="title">Add Lesson</h4>
+                    </div>
+                    <div class="card-content">
+                      <%= form_for(@lesson, url: new_lesson_path) do |f| %>
+                            <div class="form-group label-floating">
+                              <label class="control-label">Video Title</label>
+                              <%= f.text_field :title, class: 'form-control' %>
+                            </div>
+
+                        <div class="form-group label-floating">
+                          <label class="control-label">Video URL</label>
+                          <%= f.text_field :url, class: 'form-control' %>
+                        </div>
+
+                        <div class="form-group label-floating">
+                          <label class="control-label">Video Category</label>
+                          <%= f.text_field :category, class: 'form-control' %>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">Create</button>
+                        <div class="clearfix"></div>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

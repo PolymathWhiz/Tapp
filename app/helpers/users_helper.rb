@@ -14,21 +14,6 @@ module UsersHelper
     ]
   end
 
-  def position_role
-    [['Internship', 1],
-     ['Full-time', 2],
-     ['Part-time', 3],
-     ['Remote', 4] ]
-  end
-
-  def employer_name(name)
-    name.fn
-  end
-
-  def about_employer(text)
-    text.about
-  end
-
   def selected_role(role)
     selected = role
     selected = selected.to_i
