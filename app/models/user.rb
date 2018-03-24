@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   validates_presence_of :fn, :lname
+
+  has_many :lessons
 end

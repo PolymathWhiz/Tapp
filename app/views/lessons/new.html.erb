@@ -14,13 +14,15 @@
           <div class="content">
             <div class="container-fluid">
               <div class="row">
+                <%#= render 'shared/error_message', object: f.object %>
+                <%#= render 'shared/flash_message' %>
                 <div class="col-md-6 col-md-offset-3">
                   <div class="card">
                     <div class="card-header">
                       <h4 class="title">Add Lesson</h4>
                     </div>
                     <div class="card-content">
-                      <%= form_for(@lesson, url: new_lesson_path) do |f| %>
+                      <%= form_for(@lesson, url: lessons_path) do |f| %>
                             <div class="form-group label-floating">
                               <label class="control-label">Video Title</label>
                               <%= f.text_field :title, class: 'form-control' %>
@@ -32,11 +34,10 @@
                         </div>
 
                         <div class="form-group label-floating">
-                          <label class="control-label">Video Category</label>
-                          <%= f.text_field :category, class: 'form-control' %>
+                          <%= f.select :category, options_for_select(categories), {prompt: "Select Category"}, class: "form-control" %>
                         </div>
 
-                        <button type="submit" class="btn btn-primary btn-block">Create</button>
+                        <%= f.submit "Create Lesson", class: 'btn btn-primary btn-block' %>
                         <div class="clearfix"></div>
                       <% end %>
                     </div>
@@ -48,3 +49,4 @@
     </div>
   </div>
 </div>
+    </div></div></div>

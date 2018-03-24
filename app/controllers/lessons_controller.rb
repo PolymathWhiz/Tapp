@@ -6,14 +6,27 @@ class LessonsController < ApplicationController
   end
 
   def index
-    @lessons = Lesson.all
+  end
+
+  def beginner
+    @beginner = Lesson.where(category: :beginner)
+  end
+
+  def intermediate
+    @intermediate = Lesson.where(category: :intermediate)
+  end
+
+  def advanced
+    @advanced = Lesson.where(category: :advanced)
   end
 
   def create
     @lesson = current_user.lessons.new(lesson_params)
     if @lesson.save
-      flash[:success] = 'Successfully added lesson.'
-      redirect_to user_path
+      flash[:success] = 'Successfully added lesson...'
+      redirect_to user_path(current_user)
+    else
+      render :new
     end
   end
 
