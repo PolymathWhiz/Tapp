@@ -10,8 +10,7 @@ class LessonsController < ApplicationController
     @lessons = Lesson.all
   end
 
-  def show
-  end
+  def show; end
 
   def beginner
     @beginner = Lesson.where(category: 1)

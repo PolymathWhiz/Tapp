@@ -12,6 +12,7 @@
             <%= @lesson.title %>
           </h2>
           <div class="embed-responsive embed-responsive-16by9">
+            <!-- This renders the video from youtube using the iframe link specified on the db -->
             <%= simple_format(@lesson.url, {}, sanitize: false, class: "embed-responsive-item") %>
           </div>
           <p style="margin-top: 30px;">

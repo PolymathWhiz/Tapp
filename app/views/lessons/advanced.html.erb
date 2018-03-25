@@ -9,66 +9,39 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
-            <h3>View Lessons</h3>
+            <h3>Intermediate Lessons</h3>
             <hr>
           </div>
           <%= render "shared/alert" %>
           <!-- <div class="col-lg-3 col-md-6 col-sm-6"> -->
-          <div class="col-md-4">
-            <div class="card">
-              <div class="card-header card-chart" data-background-color="green">
-                <div class="ct-chart" id="dailySalesChart"></div>
-              </div>
-              <div class="card-content">
-                <h4 class="title">BEGINNER</h4>
-                <p class="category">
-                  Beginner level kids
-                </p>
-              </div>
-              <div class="card-footer">
-                <div class="stats">
-                  <!--<i class="material-icons">access_time</i> updated 4 minutes ago-->
-                  <%= link_to "View", lesson_beginner_path %>
+          <% if @advanced.length > 0 %>
+            <% @advanced.each do |lesson| %>
+              <div class="col-md-3">
+                <div class="card">
+                  <div class="card-header card-chart" data-background-color="green">
+                    <div class="ct-chart" id="dailySalesChart"></div>
+                  </div>
+                  <div class="card-content">
+                    <h4 class="title">
+                      <%= lesson.title %>
+                    </h4>
+                    <p class="category">
+                      <%= lesson.description %>
+                    </p>
+                  </div>
+                  <div class="card-footer">
+                    <div class="stats">
+                      <%= link_to "View", lesson_path(lesson) %>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="card">
-              <div class="card-header card-chart" data-background-color="orange">
-                <div class="ct-chart" id="emailsSubscriptionChart"></div>
-              </div>
-              <div class="card-content">
-                <h4 class="title">INTERMEDIATE</h4>
-                <p class="category">Intermediate level kids</p>
-              </div>
-              <div class="card-footer">
-                <div class="stats">
-                  <!--<i class="material-icons">access_time</i> updated 2 days ago-->
-                  <%= link_to "View", lesson_intermediate_path %>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="card">
-              <div class="card-header card-chart" data-background-color="red">
-                <div class="ct-chart" id="completedTasksChart"></div>
-              </div>
-              <div class="card-content">
-                <h4 class="title">ADVANCED</h4>
-                <p class="category">Advanced level kids</p>
-              </div>
-              <div class="card-footer">
-                <div class="stats">
-                  <!--<i class="material-icons">access_time</i> updated 2 days ago-->
-                  <%= link_to "View", lesson_advanced_path %>
-                </div>
-              </div>
-            </div>
-          </div>
+            <% end %>
+          <% else %>
+            <h2 style="color: red">
+              NO LESSON FOUND
+            </h2>
+          <% end %>
         </div>
       </div>
     </div>
