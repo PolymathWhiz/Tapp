@@ -31,7 +31,12 @@
                   </div>
                   <div class="card-footer">
                     <div class="stats">
-                      <%= link_to "View", lesson_path(lesson) %>
+                      <%= link_to "View", lesson_path(lesson), class: 'nav-link' %>
+                    </div>
+                    <div class="pull-right">
+                      <% if current_user.admin? %>
+                        <%= link_to 'Delete', lesson_path(lesson), class: 'nav-link',method: :delete, data: { confirm: "Are you sure you want to delete this lesson ?" } %>
+                      <% end %>
                     </div>
                   </div>
                 </div>

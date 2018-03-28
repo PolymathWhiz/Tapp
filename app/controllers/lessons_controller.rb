@@ -36,7 +36,10 @@ class LessonsController < ApplicationController
 
   def update; end
 
-  def destroy; end
+  def destroy
+    @lesson.destroy
+    redirect_to current_user
+  end
 
   private
 
