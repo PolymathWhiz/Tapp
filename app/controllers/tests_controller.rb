@@ -3,6 +3,16 @@ class TestsController < ApplicationController
   end
 
   def create
+  end
+
+  def beginner_quiz
+  end
+
+  def intermediate_quiz
+
+  end
+
+  def advanced_quiz
 
   end
 

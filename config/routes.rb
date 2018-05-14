@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   get 'lesson/intermediate', to: 'lessons#intermediate'
   get 'lesson/advanced', to: 'lessons#advanced'
 
+  get '/tests/beginner_quiz', to: 'test#beginner_quiz'
+  get '/tests/intermediate_quiz', to: 'test#intermediate_quiz'
+  get '/tests/advanced_quiz', to: 'test#advanced_quiz'
+
   root to: 'pages#home'
 
   devise_for :users, controllers: {

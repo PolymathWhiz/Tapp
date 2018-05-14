@@ -14,18 +14,25 @@
           <p>Dashboard</p>
         </a>
       </li>
-      <li>
-        <a href="<%= edit_user_registration_path %>">
-          <i class="material-icons">person</i>
-          <p>View Your Profile</p>
-        </a>
-      </li>
+<!--      <li>-->
+<!--        <a href="<%#= edit_user_registration_path %>">-->
+<!--          <i class="material-icons">person</i>-->
+<!--          <p>View Your Profile</p>-->
+<!--        </a>-->
+<!--      </li>-->
 
       <% if current_user.admin? %>
         <li>
           <a href="<%= new_lesson_path %>">
             <i class="material-icons">content_paste</i>
             <p>Add Lessons</p>
+          </a>
+        </li>
+
+        <li>
+          <a href="<%= tests_path %>">
+            <i class="material-icons">content_paste</i>
+            <p>Add Quiz</p>
           </a>
         </li>
         <% end %>
@@ -39,7 +46,7 @@
           <li>
             <a href="<%= root_path %>">
               <i class="material-icons">library_books</i>
-              <p>Take Tests</p>
+              <p>Take Quiz</p>
             </a>
           </li>
           <li class="active-pro">
