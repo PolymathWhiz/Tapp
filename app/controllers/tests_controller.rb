@@ -1,8 +1,12 @@
 class TestsController < ApplicationController
+  # before_action :set_test, only: [:advanced_quiz, :beginner_quiz, :intermediate_quiz]
   def new
   end
 
   def create
+  end
+
+  def show
   end
 
   def beginner_quiz

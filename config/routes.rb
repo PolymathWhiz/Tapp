@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
 
-  resources :tests
+  resources :tests, only: [:index]
   resources :lessons
 
   get 'lesson/beginner', to: 'lessons#beginner'
   get 'lesson/intermediate', to: 'lessons#intermediate'
   get 'lesson/advanced', to: 'lessons#advanced'
 
-  get '/tests/beginner_quiz', to: 'test#beginner_quiz'
-  get '/tests/intermediate_quiz', to: 'test#intermediate_quiz'
-  get '/tests/advanced_quiz', to: 'test#advanced_quiz'
+  get '/tests/beginner_quiz', to: 'tests#beginner_quiz'
+  get '/tests/intermediate_quiz', to: 'tests#intermediate_quiz'
+  get '/tests/advanced_quiz', to: 'tests#advanced_quiz'
 
   root to: 'pages#home'
 
