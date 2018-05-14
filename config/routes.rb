@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :tests
   resources :lessons
 
   get 'lesson/beginner', to: 'lessons#beginner'
