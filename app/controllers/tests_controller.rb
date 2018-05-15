@@ -1,4 +1,5 @@
 class TestsController < ApplicationController
+  before_action :authenticate_user!
   # before_action :set_test, only: [:advanced_quiz, :beginner_quiz, :intermediate_quiz]
   def new
   end

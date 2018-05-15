@@ -8,11 +8,10 @@
     <div class="content">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-md-12">
             <h3>Beginner Quiz</h3>
             <hr>
-
-            <div class="fyrebox_quiz" data-gid="0oyDB1ajG" data-oid="xPjOqdGVr" /></div><script src="https://cdn.fyrebox.com/javascripts/fyrebox.min.js?2" defer="defer" async></script>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe id="myFrame" class="embed-responsive-item" src="https://www.riddle.com/creator/app/riddle/#/edit/create/152258?tid=quiz-question&pid=1"></iframe>
           </div>
           </div>
           <%= render "shared/alert" %>
@@ -21,3 +20,9 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#myframe").contents().find('.navbar, .mainnavbar').hide();
+    });
+</script>
