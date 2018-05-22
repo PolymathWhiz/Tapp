@@ -2,22 +2,25 @@
 
   <%= render "shared/sidebar" %>
 
+  <style>
+    body{
+      background-color: #fff;
+    }
+  </style>
+
   <div class="main-panel">
     <%= render "shared/employer_nav" %>
 
     <div class="content">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-md-12">
-            <h3>Intermediate Quiz</h3>
-            <hr>
-
-            <div class="fyrebox_quiz" data-gid="0oyDB1ajG" data-oid="xPjOqdGVr" /></div><script src="https://cdn.fyrebox.com/javascripts/fyrebox.min.js?2" defer="defer" async></script>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe id="myFrame" class="embed-responsive-item" src="http://quiz.one957.com/pages/intermediate.php"></iframe>
+          </div>
         </div>
+        <%= render "shared/alert" %>
       </div>
-      <%= render "shared/alert" %>
     </div>
   </div>
-</div>
 </div>
 </div>

@@ -18,7 +18,9 @@ class TestsController < ApplicationController
   end
 
   def advanced_quiz
+  end
 
+  def add
   end
 
   def destroy

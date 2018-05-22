@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/tests/beginner_quiz', to: 'tests#beginner_quiz'
   get '/tests/intermediate_quiz', to: 'tests#intermediate_quiz'
   get '/tests/advanced_quiz', to: 'tests#advanced_quiz'
+  get '/tests/add', to: 'tests#add'
 
   root to: 'pages#home'
 

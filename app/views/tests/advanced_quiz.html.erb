@@ -2,25 +2,20 @@
 
   <%= render "shared/sidebar" %>
 
+  <style>
+    body{
+      background-color: #fff;
+    }
+  </style>
+
   <div class="main-panel">
     <%= render "shared/employer_nav" %>
 
     <div class="content">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-md-12">
-            <h3>Advanced Quiz</h3>
-            <hr>
-            <div class="riddle_target" data-rid-id="152258" data-fg="#1486CD" data-bg="#FFFFFF"  data-auto-scroll="true">
-              <script src="https://www.riddle.com/files/js/embed.js"></script>
-              <iframe src="https://www.riddle.com/a/152258?" title="Pop Quiz - (untitled)">
-                <section></section>
-                <section></section>
-                <section></section>
-                <section></section>
-                <section></section>
-              </iframe>
-            </div>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe id="myFrame" class="embed-responsive-item" src="http://quiz.one957.com/pages/advanced.php"></iframe>
           </div>
         </div>
         <%= render "shared/alert" %>
